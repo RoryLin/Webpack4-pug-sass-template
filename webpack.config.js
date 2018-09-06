@@ -8,12 +8,6 @@ module.exports = (env, argv) =>{
     const MiniCssExtractPlugin = require("mini-css-extract-plugin");
     const webpack = require('webpack');
     return {
-        entry: path.resolve(__dirname, './src/index.js'),
-        devServer: {
-            contentBase: path.join(__dirname, 'dist'),
-            hot: true,
-            compress: true
-        },
         module: {
             rules: [
                 {
@@ -40,8 +34,7 @@ module.exports = (env, argv) =>{
             new webpack.HotModuleReplacementPlugin()
         ],
         output: {
-            filename: 'app.[hash].js',
-            path: path.resolve(__dirname, 'dist')
+            filename: 'app.[hash].js'
         }
     }
 
